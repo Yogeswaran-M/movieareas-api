@@ -1,5 +1,5 @@
 import express from "express";
-import { MovieIndex, MovieCreate, MovieUpdate, MovieDelete, } 
+import { MovieIndex, MovieDetail, MovieCreate, MovieUpdate, MovieDelete, } 
 from "../controllers/movie.controller.js";
 
 const router = express.Router();
@@ -8,6 +8,8 @@ const router = express.Router();
 
 // R - Read all movies
 router.get("/", MovieIndex);
+
+router.get("/:id", MovieDetail);
 
 // C - Create a movie
 router.post("/", MovieCreate);
